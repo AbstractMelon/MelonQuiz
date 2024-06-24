@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="join-lobby">
+        <h2>Join a Lobby</h2>
+        <input type="text" id="username" placeholder="Enter your username">
+        <input type="text" id="lobby-id" placeholder="Enter lobby ID">
+        <button onclick="joinLobby()">Join Lobby</button> <button onclick="createLobby()">Create Lobby</button>
+    </div>
+    <div id="create-lobby" style="display: none;">
+        <h2>Create a Lobby</h2>
+        <button onclick="getQuizzes()">Get Quizzes</button>
+        <div id="quizzes"></div>
+    </div>
+    <div id="lobby" style="display: none;">
+        <h2>Lobby: <span id="lobby-id-display"></span></h2>
+        <p>Players:</p>
+        <ul id="players"></ul>
+        <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+    <div id="quiz-info-popup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeQuizInfoPopup()">&times;</span>
+            <h2 id="quiz-info-name"></h2>
+            <p id="quiz-info-description"></p>
+            <p><strong>Author:</strong> <span id="quiz-info-author"></span></p>
+            <button onclick="makeLobby()">Select</button>
+        </div>
+    </div>
+    
+    <div id="quiz-container" style="display: none;">
+        <h2>Quiz</h2>
+        <div id="question"></div>
+        <ul id="answers"></ul>
+        <button id="next-question" onclick="nextQuestion()" style="display: none;">Next Question</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="quiz-builder">
+        <h2>Quiz Builder</h2>
+        <input type="text" id="quiz-name" placeholder="Quiz Name">
+        <textarea id="quiz-description" placeholder="Quiz Description"></textarea>
+        <input type="text" id="quiz-author" placeholder="Quiz Author">
+        <div id="questions">
+        </div>
+        <button onclick="addQuestion()">Add Question</button>
+        <button onclick="saveQuiz()">Save Quiz</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
